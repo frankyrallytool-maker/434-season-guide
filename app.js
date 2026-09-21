@@ -167,9 +167,8 @@
 
   function openDetail(id){
     const d=details[id]; if(!d)return;
-    const art = artIndex[id] !== undefined ? artIndex[id] : 0;
-    const detailArt = $('#detailArt');
-    if(detailArt) detailArt.className='detail-art art-'+art;
+    const ornament = $('.detail-ornament');
+    if(ornament) ornament.textContent = d.icon || '☥';
     $('#detailKicker').textContent=pick(d.kicker);
     $('#detailTitle').textContent=pick(d.title);
     $('#detailLead').textContent=pick(d.lead);
