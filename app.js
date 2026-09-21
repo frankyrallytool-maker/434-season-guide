@@ -10,6 +10,9 @@
   const resetProgress = document.getElementById('resetProgress');
   const navToggle = document.querySelector('.nav-toggle');
   const mobileNav = document.getElementById('mobileNav');
+  const brandMark = document.querySelector('.brand-mark');
+
+  if (brandMark) brandMark.textContent = '434';
 
   function readProgress() {
     try {
