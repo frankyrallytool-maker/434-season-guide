@@ -96,7 +96,7 @@ main{width:calc(100% - 22px)}.hero{padding:42px 0 32px}.hero-title{font-size:cla
 
 /* Lightweight thematic artwork pack — 13 custom covers in one ~65 KB WebP sprite */
 .system-art,.detail-art,.event-card[data-art]::before{
-  background-image:var(--roadmap-atlas);
+  background-image:url("assets/topics/topics-sprite.webp?v=1");
   background-repeat:no-repeat;
   background-size:500% 300%;
 }
