@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090b10" />
+  <meta name="description" content="434 interactive Dark War Survival season guide." />
+  <title>434 — Season Guide</title>
+  <link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+  <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-b" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="434 Season Guide home">
+      <span class="brand-mark">A</span>
+      <span class="brand-copy">
+        <strong>434</strong>
+        <small>SEASON GUIDE</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-controls="mobileNav" aria-expanded="false">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Open navigation</span>
+    </button>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#start">Start here</a>
+      <a href="#ruins">Ruins</a>
+      <a href="#daily">Daily</a>
+      <a href="#tips">Tips</a>
+    </nav>
+  </header>
+
+  <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+    <a href="#start">Start here</a>
+    <a href="#ruins">Ruins</a>
+    <a href="#daily">Daily</a>
+    <a href="#tips">Tips</a>
+  </nav>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow">DARK WAR SURVIVAL · INTERACTIVE GUIDE</p>
+        <h1 id="heroTitle">Enter the season.<br><span>Know what to do.</span></h1>
+        <p class="hero-text">A fast, mobile-friendly guide for Server 434 players. Follow the essentials first, then dive deeper when you need details.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#start">Start the guide</a>
+          <button class="btn btn-ghost" id="resetProgress" type="button">Reset progress</button>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-label="Guide progress">
+        <div class="rune-ring" aria-hidden="true">
+          <div class="rune-ring-inner">VI</div>
+        </div>
+        <div class="progress-copy">
+          <span>YOUR PROGRESS</span>
+          <strong id="progressValue">0 / 5</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p id="progressHint">Complete the five first-season actions.</p>
+      </div>
+    </section>
+
+    <section class="quick-strip" aria-label="Quick guide sections">
+      <a href="#start"><span>01</span><strong>First moves</strong><small>Get started correctly</small></a>
+      <a href="#ruins"><span>02</span><strong>Divine Ruins</strong><small>Tasks & buffs</small></a>
+      <a href="#daily"><span>03</span><strong>Daily routine</strong><small>What not to miss</small></a>
+      <a href="#tips"><span>04</span><strong>Quick tips</strong><small>Small things that matter</small></a>
+    </section>
+
+    <section id="start" class="section section-start">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">START HERE</p>
+          <h2>Your first 5 actions</h2>
+        </div>
+        <p>Tap a card for details. Check it when done — your progress is saved on this device.</p>
+      </div>
+
+      <div class="step-list" id="stepList">
+        <article class="step-card" data-step="1">
+          <button class="step-toggle" type="button" aria-expanded="true">
+            <span class="step-number">01</span>
+            <span class="step-title-wrap">
+              <span class="step-kicker">SEASON MAP</span>
+              <strong>Enter the new map</strong>
+            </span>
+            <span class="step-state" aria-hidden="true">+</span>
+          </button>
+          <div class="step-body">
+            <p>Open the <strong>Season</strong> icon, tap <strong>ENTER</strong>, then teleport into your alliance hive.</p>
+            <div class="micro-flow" aria-label="Step one sequence">
+              <span>Season</span><i>→</i><span>Enter</span><i>→</i><span>Alliance hive</span>
+            </div>
+            <label class="done-check"><input type="checkbox" data-progress="1" /> <span>Done</span></label>
+          </div>
+        </article>
+
+        <article class="step-card" data-step="2">
+          <button class="step-toggle" type="button" aria-expanded="false">
+            <span class="step-number">02</span>
+            <span class="step-title-wrap">
+              <span class="step-kicker">FARM FIRST</span>
+              <strong>Hunt Boomers & Zombies</strong>
+            </span>
+            <span class="step-state" aria-hidden="true">+</span>
+          </button>
+          <div class="step-body" hidden>
+            <p>Kill <strong>Boomers</strong> and <strong>Zombies</strong> to collect the season currency and resources you need for the opening progression.</p>
+            <label class="done-check"><input type="checkbox" data-progress="2" /> <span>Done</span></label>
+          </div>
+        </article>
+
+        <article class="step-card" data-step="3">
+          <button class="step-toggle" type="button" aria-expanded="false">
+            <span class="step-number">03</span>
+            <span class="step-title-wrap">
+              <span class="step-kicker">SEASON BUILDINGS</span>
+              <strong>Build the Altar & Obelisk</strong>
+            </span>
+            <span class="step-state" aria-hidden="true">+</span>
+          </button>
+          <div class="step-body" hidden>
+            <p>Go to the bottom of the season tower and start building your <strong>Altar</strong> and <strong>Obelisk</strong>.</p>
+            <div class="tip-box"><span>TIP</span> Do this early so your seasonal progression is not delayed.</div>
+            <label class="done-check"><input type="checkbox" data-progress="3" /> <span>Done</span></label>
+          </div>
+        </article>
+
+        <article class="step-card" data-step="4">
+          <button class="step-toggle" type="button" aria-expanded="false">
+            <span class="step-number">04</span>
+            <span class="step-title-wrap">
+              <span class="step-kicker">BONUS RESET</span>
+              <strong>Use the Shadow Call reset</strong>
+            </span>
+            <span class="step-state" aria-hidden="true">+</span>
+          </button>
+          <div class="step-body" hidden>
+            <p><strong>Shadow Call has been reset.</strong> Take advantage of the reset and complete it again.</p>
+            <label class="done-check"><input type="checkbox" data-progress="4" /> <span>Done</span></label>
+          </div>
+        </article>
+
+        <article class="step-card" data-step="5">
+          <button class="step-toggle" type="button" aria-expanded="false">
+            <span class="step-number">05</span>
+            <span class="step-title-wrap">
+              <span class="step-kicker">DIVINE RUINS</span>
+              <strong>Start your Ruins Tasks</strong>
+            </span>
+            <span class="step-state" aria-hidden="true">+</span>
+          </button>
+          <div class="step-body" hidden>
+            <p>Start your Ruins Tasks and read every <strong>!</strong> carefully before choosing. Different tasks can offer different buffs for different troop types.</p>
+            <div class="warning-box"><strong>Choose wisely.</strong> Do not select a task only because it looks stronger — match the buff to the troops you actually use.</div>
+            <label class="done-check"><input type="checkbox" data-progress="5" /> <span>Done</span></label>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="ruins" class="section split-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DIVINE RUINS</p>
+          <h2>Read before you choose</h2>
+        </div>
+        <p>This area will grow with the detailed Ruins tables, refresh costs and buff choices from our season notes.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card feature-card-wide">
+          <span class="feature-index">RULE #1</span>
+          <h3>The “!” matters</h3>
+          <p>The warning/details icon is there for a reason. Open it before locking a task so you know which troop type or bonus the task actually supports.</p>
+          <div class="troop-row" aria-label="Troop buff reminder">
+            <span>Troop A</span><span>Troop B</span><span>Troop C</span>
+          </div>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">NEXT</span>
+          <h3>Refresh strategy</h3>
+          <p>Refresh costs and daily limits will be added here from the verified season data.</p>
+          <span class="status-pill">DATA TO INTEGRATE</span>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">NEXT</span>
+          <h3>Best task picks</h3>
+          <p>A simple selector will help players match Ruins tasks to their troop focus.</p>
+          <span class="status-pill">COMING NEXT</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="daily" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DAILY ROUTINE</p>
+          <h2>Don't leave free progress behind</h2>
+        </div>
+        <p>The daily checklist will expand as we validate each season mechanic.</p>
+      </div>
+
+      <div class="daily-board">
+        <div class="daily-item"><span class="daily-dot"></span><div><strong>Farm season enemies</strong><small>Boomers & Zombies</small></div></div>
+        <div class="daily-item"><span class="daily-dot"></span><div><strong>Check Ruins Tasks</strong><small>Read the buff details before choosing</small></div></div>
+        <div class="daily-item"><span class="daily-dot"></span><div><strong>Review seasonal buildings</strong><small>Keep Altar & Obelisk progression moving</small></div></div>
+      </div>
+    </section>
+
+    <section id="tips" class="section tips-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">434 NOTES</p>
+          <h2>Fast reminders</h2>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <article><span>01</span><p>Enter the season map before you start spending time on the old map.</p></article>
+        <article><span>02</span><p>Do not ignore resets such as Shadow Call — they are extra progression opportunities.</p></article>
+        <article><span>03</span><p>In Divine Ruins, the best task is the one that fits your troop setup, not just the first high-looking bonus.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><strong>434</strong><span>Interactive Season Guide</span></div>
+    <p>Made for the alliance · Mobile + desktop</p>
+  </footer>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
