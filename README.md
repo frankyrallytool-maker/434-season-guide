@@ -8,7 +8,7 @@ Responsive static website for an interactive Dark War Survival season guide.
 - `app.js` — accordion navigation, mobile menu and local progress tracking
 
 ## Publish with GitHub Pages
-The site is fully static and can be served directly from the repository root on the `main` branch.
+The site is fully static and deployed with GitHub Pages from the `main` branch.
 
 ## Content status
 V1 includes the five validated opening actions:
