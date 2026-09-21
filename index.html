@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#090b10" />
   <meta name="description" content="434 interactive Dark War Survival season guide." />
   <title>434 — Season Guide</title>
-  <link rel="stylesheet" href="styles.css?v=1" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
   <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
@@ -28,6 +28,7 @@
 
     <nav class="desktop-nav" aria-label="Main navigation">
       <a href="#start">Start here</a>
+      <a href="#items">Items</a>
       <a href="#ruins">Ruins</a>
       <a href="#daily">Daily</a>
       <a href="#tips">Tips</a>
@@ -36,6 +37,7 @@
 
   <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" hidden>
     <a href="#start">Start here</a>
+    <a href="#items">Items</a>
     <a href="#ruins">Ruins</a>
     <a href="#daily">Daily</a>
     <a href="#tips">Tips</a>
@@ -68,11 +70,27 @@
       </div>
     </section>
 
+    <section class="guide-search" aria-label="Search the guide">
+      <div class="search-copy">
+        <span class="eyebrow">FIND IT FAST</span>
+        <strong>Search the guide</strong>
+      </div>
+      <div class="search-box-wrap">
+        <label class="search-box" for="guideSearch">
+          <span class="search-symbol" aria-hidden="true">⌕</span>
+          <input id="guideSearch" type="search" autocomplete="off" placeholder="Search an item, task, building, buff..." />
+          <button id="clearSearch" class="clear-search" type="button" aria-label="Clear search" hidden>×</button>
+        </label>
+        <div id="searchResults" class="search-results" aria-live="polite" hidden></div>
+      </div>
+    </section>
+
     <section class="quick-strip" aria-label="Quick guide sections">
       <a href="#start"><span>01</span><strong>First moves</strong><small>Get started correctly</small></a>
-      <a href="#ruins"><span>02</span><strong>Divine Ruins</strong><small>Tasks & buffs</small></a>
-      <a href="#daily"><span>03</span><strong>Daily routine</strong><small>What not to miss</small></a>
-      <a href="#tips"><span>04</span><strong>Quick tips</strong><small>Small things that matter</small></a>
+      <a href="#items"><span>02</span><strong>Item finder</strong><small>What? Where? When?</small></a>
+      <a href="#ruins"><span>03</span><strong>Divine Ruins</strong><small>Tasks & buffs</small></a>
+      <a href="#daily"><span>04</span><strong>Daily routine</strong><small>What not to miss</small></a>
+      <a href="#tips"><span>05</span><strong>Quick tips</strong><small>Small things that matter</small></a>
     </section>
 
     <section id="start" class="section section-start">
@@ -167,6 +185,54 @@
       </div>
     </section>
 
+    <section id="items" class="section item-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ITEM · WHAT IS THIS?</p>
+          <h2>Know what to keep — and when to use it</h2>
+        </div>
+        <p>Use this area when you find an unfamiliar season item. Each card answers the three questions that matter immediately.</p>
+      </div>
+
+      <div class="item-explainer" aria-label="Item card fields">
+        <div>
+          <span class="item-field-number">01</span>
+          <strong>WHAT?</strong>
+          <p>What the item is, what it does and why it matters.</p>
+        </div>
+        <div>
+          <span class="item-field-number">02</span>
+          <strong>WHERE?</strong>
+          <p>The exact menu, building, event or feature where you use it.</p>
+        </div>
+        <div>
+          <span class="item-field-number">03</span>
+          <strong>FROM WHEN?</strong>
+          <p>Available now, Week 2, later in the season, or only during a specific event.</p>
+        </div>
+      </div>
+
+      <div class="item-toolbar">
+        <div class="item-filters" role="group" aria-label="Filter items by availability">
+          <button class="item-filter is-active" type="button" data-item-filter="all">All</button>
+          <button class="item-filter" type="button" data-item-filter="now">Now</button>
+          <button class="item-filter" type="button" data-item-filter="week-2">Week 2</button>
+          <button class="item-filter" type="button" data-item-filter="later">Later</button>
+        </div>
+        <span id="itemCount" class="item-count">0 items documented</span>
+      </div>
+
+      <div id="itemGrid" class="item-grid">
+        <div id="itemEmpty" class="item-empty">
+          <span class="item-empty-mark">?</span>
+          <div>
+            <strong>Item database ready.</strong>
+            <p>Send me an item name or screenshot and it will be added here with <b>WHAT?</b>, <b>WHERE?</b> and <b>FROM WHEN?</b>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="ruins" class="section split-section">
       <div class="section-heading">
         <div>
@@ -236,6 +302,6 @@
     <p>Made for the alliance · Mobile + desktop</p>
   </footer>
 
-  <script src="app.js?v=1"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
