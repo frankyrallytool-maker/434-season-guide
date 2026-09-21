@@ -92,225 +92,82 @@ main{width:calc(100% - 22px)}.hero{padding:42px 0 32px}.hero-title{font-size:cla
 @media(max-width:420px){.brand-emblem{width:38px;height:38px}.brand-copy strong{font-size:12px}.language-picker{padding-left:5px}.system-grid{grid-template-columns:1fr}.hero-kicker{font-size:25px}.hero-title{font-size:58px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
-/* User-provided Ragnarok artwork atlas */
-.system-art,
-.detail-art{
+
+
+/* Lightweight thematic artwork pack — 13 custom covers in one ~65 KB WebP sprite */
+.system-art,.detail-art,.event-card[data-art]::before{
   background-image:var(--roadmap-atlas);
   background-repeat:no-repeat;
-  background-size:500% 200%;
+  background-size:500% 300%;
 }
-.art-0{background-position:0% 0%}
-.art-1{background-position:25% 0%}
-.art-2{background-position:50% 0%}
-.art-3{background-position:75% 0%}
-.art-4{background-position:100% 0%}
-.art-5{background-position:0% 100%}
-.art-6{background-position:25% 100%}
-.art-7{background-position:50% 100%}
-.art-8{background-position:75% 100%}
-.art-9{background-position:100% 100%}
+.art-0{background-position:0% 0%}.art-1{background-position:25% 0%}.art-2{background-position:50% 0%}.art-3{background-position:75% 0%}.art-4{background-position:100% 0%}
+.art-5{background-position:0% 50%}.art-6{background-position:25% 50%}.art-7{background-position:50% 50%}.art-8{background-position:75% 50%}.art-9{background-position:100% 50%}
+.art-10{background-position:0% 100%}.art-11{background-position:25% 100%}.art-12{background-position:50% 100%}
 
+.system-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .system-card{
-  min-height:210px;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  text-align:left;
+  min-height:205px;padding:0;display:flex;flex-direction:column;text-align:left;
+  border-color:rgba(242,182,61,.24);background:#140c07;
 }
 .system-art{
-  position:relative;
-  display:block;
-  width:100%;
-  height:104px;
-  flex:0 0 104px;
-  border-bottom:1px solid rgba(242,182,61,.18);
-  background-color:#2a1609;
+  position:relative;display:block;width:100%;height:112px;flex:0 0 112px;
+  border-bottom:1px solid rgba(242,182,61,.18);background-color:#211207;
 }
 .system-art::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg,rgba(7,4,2,.04),rgba(10,5,2,.68)),
-    linear-gradient(90deg,rgba(242,182,61,.04),transparent 55%);
-  pointer-events:none;
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,4,2,.02),rgba(12,6,3,.48));
 }
 .system-icon{
-  position:absolute;
-  left:14px;
-  top:78px;
-  z-index:2;
-  width:40px;
-  height:40px;
-  margin:0;
-  box-shadow:0 8px 18px rgba(0,0,0,.30);
+  position:absolute;left:14px;top:87px;z-index:2;width:40px;height:40px;margin:0;
+  box-shadow:0 8px 18px rgba(0,0,0,.3)
 }
-.system-copy{
-  display:block;
-  padding:16px 16px 18px;
-}
-.system-copy small{display:block}
-.system-copy strong{display:block}
-.system-copy p{margin-bottom:0}
-.system-arrow{
-  right:14px;
-  bottom:13px;
-}
+.system-copy{display:block;padding:17px 15px 16px}.system-copy small{display:block}.system-copy strong{display:block}.system-copy p{margin-bottom:0}
+.system-arrow{right:14px;bottom:13px}
 
-.detail-art{
-  position:relative;
-  height:230px;
-  margin:-25px -25px 18px;
-  border-radius:16px 16px 8px 8px;
-  border-bottom:1px solid rgba(242,182,61,.24);
-  background-color:#251207;
-}
-.detail-art::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  background:
-    linear-gradient(180deg,rgba(10,5,2,.05) 0%,rgba(12,6,3,.12) 50%,rgba(18,10,5,.92) 100%),
-    linear-gradient(90deg,rgba(0,0,0,.18),transparent 45%,rgba(0,0,0,.12));
-}
-.detail-ornament{
-  position:relative;
-  z-index:2;
-  margin-top:-46px;
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
-}
-
-.event-card[data-art]{
-  overflow:hidden;
-}
+.event-card[data-art]{overflow:hidden;padding-right:94px}
 .event-card[data-art]::before{
-  content:"";
-  position:absolute;
-  inset:0 0 0 auto;
-  width:82px;
-  opacity:.16;
-  background-image:var(--roadmap-atlas);
-  background-repeat:no-repeat;
-  background-size:500% 200%;
-  pointer-events:none;
-  mask-image:linear-gradient(90deg,transparent,#000 45%);
+  content:"";position:absolute;right:0;top:0;bottom:0;width:92px;
+  opacity:.72;pointer-events:none;mask-image:linear-gradient(90deg,transparent 0,#000 38%);
 }
 .event-card[data-art="0"]::before{background-position:0% 0%}
 .event-card[data-art="1"]::before{background-position:25% 0%}
 .event-card[data-art="2"]::before{background-position:50% 0%}
 .event-card[data-art="3"]::before{background-position:75% 0%}
 .event-card[data-art="4"]::before{background-position:100% 0%}
-.event-card[data-art="5"]::before{background-position:0% 100%}
-.event-card[data-art="6"]::before{background-position:25% 100%}
-.event-card[data-art="7"]::before{background-position:50% 100%}
-.event-card[data-art="8"]::before{background-position:75% 100%}
-.event-card[data-art="9"]::before{background-position:100% 100%}
-.event-card > *{position:relative;z-index:1}
-
-.hero-seal{
-  background-image:
-    radial-gradient(circle at center,rgba(17,8,3,.28),rgba(11,5,2,.76)),
-    var(--roadmap-atlas);
-  background-size:auto,500% 200%;
-  background-position:center,0% 0%;
-  background-repeat:no-repeat;
-}
-.hero-seal .seal-ring,
-.hero-seal .seal-symbol,
-.hero-seal .seal-caption{
-  text-shadow:0 2px 8px rgba(0,0,0,.65);
-}
-
-@media(max-width:680px){
-  .system-card{min-height:190px}
-  .system-art{height:92px;flex-basis:92px}
-  .system-icon{top:67px}
-  .detail-art{
-    height:180px;
-    margin:-20px -16px 16px;
-  }
-}
-
-
-/* Detail modal — clean mode B: artwork stays on cards only */
-.detail-art{display:none!important}
+.event-card[data-art="5"]::before{background-position:0% 50%}
+.event-card[data-art="6"]::before{background-position:25% 50%}
+.event-card[data-art="7"]::before{background-position:50% 50%}
+.event-card[data-art="8"]::before{background-position:75% 50%}
+.event-card[data-art="9"]::before{background-position:100% 50%}
+.event-card[data-art="10"]::before{background-position:0% 100%}
+.event-card[data-art="11"]::before{background-position:25% 100%}
+.event-card[data-art="12"]::before{background-position:50% 100%}
+.event-card>*{position:relative;z-index:1}
 
 .detail-sheet{
-  padding:28px;
-  overflow:hidden auto;
-  background:
-    radial-gradient(circle at 88% 4%,rgba(242,182,61,.08),transparent 24%),
-    linear-gradient(150deg,rgba(48,27,12,.985),rgba(16,9,5,.995));
+  padding:24px;overflow:hidden auto;
+  background:radial-gradient(circle at 92% 4%,rgba(242,182,61,.08),transparent 26%),linear-gradient(150deg,rgba(48,27,12,.985),rgba(16,9,5,.995));
 }
-
-.detail-sheet::after{
-  content:"";
-  position:absolute;
-  right:-70px;
-  top:-70px;
-  width:210px;
-  height:210px;
-  border:1px solid rgba(242,182,61,.08);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 28px rgba(242,182,61,.018),
-    0 0 0 58px rgba(242,182,61,.012);
-  pointer-events:none;
+.detail-media{position:relative;display:grid;grid-template-columns:240px 58px;align-items:end;gap:14px;margin-bottom:18px}
+.detail-art{
+  width:240px;height:135px;border:1px solid rgba(242,182,61,.28);border-radius:12px;
+  background-color:#211207;box-shadow:0 12px 28px rgba(0,0,0,.28)
 }
-
 .detail-ornament{
-  position:relative;
-  z-index:2;
-  width:58px;
-  height:58px;
-  margin:0 0 20px;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(242,182,61,.34);
-  border-radius:14px;
-  background:
-    linear-gradient(145deg,rgba(242,182,61,.10),rgba(242,182,61,.025)),
-    #201108;
-  color:#ffda7d;
-  font-size:30px;
-  box-shadow:
-    inset 0 0 18px rgba(242,182,61,.06),
-    0 12px 28px rgba(0,0,0,.24);
+  position:relative;z-index:2;width:58px;height:58px;margin:0;
+  display:grid;place-items:center;border:1px solid rgba(242,182,61,.34);border-radius:14px;
+  background:linear-gradient(145deg,rgba(242,182,61,.10),rgba(242,182,61,.025)),#201108;
+  color:#ffda7d;font-size:30px;box-shadow:inset 0 0 18px rgba(242,182,61,.06),0 12px 28px rgba(0,0,0,.24)
 }
+.detail-sheet h2{max-width:88%}.detail-lead{max-width:620px;line-height:1.65}
+.fact-card{background:linear-gradient(145deg,rgba(0,0,0,.17),rgba(242,182,61,.025))}
+.detail-tip{background:linear-gradient(90deg,rgba(242,182,61,.055),rgba(242,182,61,.018))}
+.hero-seal{background:radial-gradient(circle,#3a210e 0 38%,#170c05 39% 59%,#0c0704 60%)!important}
 
-.detail-kicker,
-.detail-sheet h2,
-.detail-lead,
-.detail-facts,
-.detail-tips{
-  position:relative;
-  z-index:2;
-}
-
-.detail-sheet h2{
-  max-width:88%;
-}
-
-.detail-lead{
-  max-width:620px;
-  line-height:1.65;
-}
-
-.fact-card{
-  background:linear-gradient(145deg,rgba(0,0,0,.17),rgba(242,182,61,.025));
-}
-
-.detail-tip{
-  background:linear-gradient(90deg,rgba(242,182,61,.055),rgba(242,182,61,.018));
-}
-
-/* Keep atlas imagery restricted to small navigation cards */
-.hero-seal{
-  background:radial-gradient(circle,#3a210e 0 38%,#170c05 39% 59%,#0c0704 60%)!important;
-}
-
+@media(max-width:900px){.system-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){
-  .detail-sheet{padding:22px 17px}
-  .detail-ornament{width:52px;height:52px;font-size:27px;margin-bottom:17px}
+  .system-grid{grid-template-columns:1fr 1fr}.system-card{min-height:190px}.system-art{height:96px;flex-basis:96px}.system-icon{top:72px}
+  .detail-media{grid-template-columns:minmax(0,1fr) 52px;gap:10px}.detail-art{width:100%;height:auto;aspect-ratio:16/9}.detail-ornament{width:52px;height:52px;font-size:27px}
+  .event-card[data-art]{padding-right:72px}.event-card[data-art]::before{width:72px}
 }
+@media(max-width:420px){.system-grid{grid-template-columns:1fr}}
