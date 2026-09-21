@@ -41,48 +41,53 @@
     {id:'envoy',icon:'◈',tag:L('ONGOING','EN CONTINU','IN CORSO','LAUFEND','CAŁY SEZON'),sub:L('Season-long puzzle event','Événement puzzle de saison','Puzzle stagionale','Saisonweites Puzzle','Sezonowe wydarzenie logiczne')},
     {id:'shop',icon:'¤',tag:L('EVERY MONDAY','CHAQUE LUNDI','OGNI LUNEDÌ','JEDEN MONTAG','CO PONIEDZIAŁEK'),sub:L('Scales · Weekly rotation','Scales · Rotation hebdo','Scales · Rotazione settimanale','Scales · Wochenrotation','Scales · Rotacja tygodniowa')}
   ];
+  const artIndex = {
+    map:0, kickoff:1, envoy:1, temples:2, relic:3, shop:4,
+    clash:5, merchant:6, outpost:7, fortress:8, calendar:9
+  };
+
 
   const weeks = [
-    {n:1,start:'2026-09-22',end:'2026-09-28',chips:['Season Kickoff'],events:[
-      {day:'mon',title:'Outpost Lv. 1–2',sub:'Territory expansion begins',detail:'outpost'},
-      {day:'mon',title:'Fortress Lv. 3',sub:'Fortress progression',detail:'fortress'},
-      {day:'wed',title:'Fortress Lv. 4 Unlock',sub:'New Fortress level',detail:'fortress'},
-      {day:'sat',title:'Temple 1 Battle + KE',sub:'Divine Temple battle',detail:'temples'},
-      {day:'ongoing',title:'Season Kickoff',sub:'6-day ranking event',detail:'kickoff'}
+    {n:1,start:'2026-09-22',end:'2026-09-28',chips:[L('Season Kickoff','Lancement de saison','Inizio stagione','Saisonstart','Start sezonu')],events:[
+      {day:'mon',title:L('Outpost Lv. 1–2','Outpost niv. 1–2','Outpost Lv. 1–2','Outpost Lv. 1–2','Outpost poz. 1–2'),sub:L('Territory expansion begins','Début de l’expansion territoriale','Inizia l’espansione territoriale','Gebietserweiterung beginnt','Początek ekspansji terytorialnej'),detail:'outpost'},
+      {day:'mon',title:L('Fortress Lv. 3','Fortress niv. 3','Fortress Lv. 3','Fortress Lv. 3','Fortress poz. 3'),sub:L('Fortress progression','Progression des Fortress','Progressione Fortress','Fortress-Fortschritt','Rozwój Fortress'),detail:'fortress'},
+      {day:'wed',title:L('Fortress Lv. 4 Unlock','Déblocage Fortress niv. 4','Sblocco Fortress Lv. 4','Fortress Lv. 4 freigeschaltet','Odblokowanie Fortress poz. 4'),sub:L('New Fortress level','Nouveau niveau de Fortress','Nuovo livello Fortress','Neue Fortress-Stufe','Nowy poziom Fortress'),detail:'fortress'},
+      {day:'sat',title:L('Temple 1 Battle + KE','Bataille Temple 1 + KE','Battaglia Temple 1 + KE','Temple-1-Kampf + KE','Walka Temple 1 + KE'),sub:L('Divine Temple battle','Bataille de Divine Temple','Battaglia Divine Temple','Divine-Temple-Kampf','Walka Divine Temple'),detail:'temples'},
+      {day:'ongoing',title:L('Season Kickoff','Lancement de saison','Inizio stagione','Saisonstart','Start sezonu'),sub:L('6-day ranking event','Événement de classement · 6 jours','Evento classifica · 6 giorni','Ranglisten-Event · 6 Tage','Wydarzenie rankingowe · 6 dni'),detail:'kickoff'}
     ]},
-    {n:2,start:'2026-09-29',end:'2026-10-05',chips:['Merchant Guild opens'],events:[
-      {day:'mon',title:'Passes Unlock',sub:'New routes open'},
-      {day:'mon',title:'Origin Merchant Guild',sub:'First opening · 12:00 server time',detail:'merchant'},
-      {day:'wed',title:'Fortress Lv. 5 Unlock',sub:'New Fortress level',detail:'fortress'},
-      {day:'sat',title:'Temple 2 Battle + KE',sub:'Divine Temple battle',detail:'temples'}
+    {n:2,start:'2026-09-29',end:'2026-10-05',chips:[L('Merchant Guild opens','Ouverture Merchant Guild','Apertura Merchant Guild','Merchant Guild öffnet','Otwarcie Merchant Guild')],events:[
+      {day:'mon',title:L('Passes Unlock','Déblocage des Passes','Sblocco Passes','Passes freigeschaltet','Odblokowanie Passes'),sub:L('New routes open','De nouvelles routes s’ouvrent','Si aprono nuove rotte','Neue Routen öffnen sich','Otwierają się nowe trasy')},
+      {day:'mon',title:L('Origin Merchant Guild','Origin Merchant Guild','Origin Merchant Guild','Origin Merchant Guild','Origin Merchant Guild'),sub:L('First opening · 12:00 server time','Première ouverture · 12:00 heure serveur','Prima apertura · 12:00 server time','Erste Öffnung · 12:00 Serverzeit','Pierwsze otwarcie · 12:00 czasu serwera'),detail:'merchant'},
+      {day:'wed',title:L('Fortress Lv. 5 Unlock','Déblocage Fortress niv. 5','Sblocco Fortress Lv. 5','Fortress Lv. 5 freigeschaltet','Odblokowanie Fortress poz. 5'),sub:L('New Fortress level','Nouveau niveau de Fortress','Nuovo livello Fortress','Neue Fortress-Stufe','Nowy poziom Fortress'),detail:'fortress'},
+      {day:'sat',title:L('Temple 2 Battle + KE','Bataille Temple 2 + KE','Battaglia Temple 2 + KE','Temple-2-Kampf + KE','Walka Temple 2 + KE'),sub:L('Divine Temple battle','Bataille de Divine Temple','Battaglia Divine Temple','Divine-Temple-Kampf','Walka Divine Temple'),detail:'temples'}
     ]},
-    {n:3,start:'2026-10-06',end:'2026-10-12',chips:['Camp Clash starts'],events:[
-      {day:'mon',title:'Merchant Battle Lv. 1–2',sub:'Merchant Guild contest',detail:'merchant'},
-      {day:'tue',title:'New Passes Unlock',sub:'New routes open'},
-      {day:'tue',title:'Territory Invasion',sub:'Camp Clash · 1 hour',detail:'clash'},
-      {day:'thu',title:'Territory Invasion',sub:'Camp Clash · 1 hour',detail:'clash'},
-      {day:'sat',title:'KE',sub:'Kill Event'}
+    {n:3,start:'2026-10-06',end:'2026-10-12',chips:[L('Camp Clash starts','Début de Camp Clash','Inizia Camp Clash','Camp Clash beginnt','Start Camp Clash')],events:[
+      {day:'mon',title:L('Merchant Battle Lv. 1–2','Merchant Battle niv. 1–2','Merchant Battle Lv. 1–2','Merchant Battle Lv. 1–2','Merchant Battle poz. 1–2'),sub:L('Merchant Guild contest','Compétition Merchant Guild','Competizione Merchant Guild','Merchant-Guild-Wettkampf','Rywalizacja Merchant Guild'),detail:'merchant'},
+      {day:'tue',title:L('New Passes Unlock','Nouveaux Passes débloqués','Nuovi Passes sbloccati','Neue Passes freigeschaltet','Odblokowanie nowych Passes'),sub:L('New routes open','De nouvelles routes s’ouvrent','Si aprono nuove rotte','Neue Routen öffnen sich','Otwierają się nowe trasy')},
+      {day:'tue',title:L('Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion'),sub:L('Camp Clash · 1 hour','Camp Clash · 1 h','Camp Clash · 1 ora','Camp Clash · 1 Std.','Camp Clash · 1 godz.'),detail:'clash'},
+      {day:'thu',title:L('Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion'),sub:L('Camp Clash · 1 hour','Camp Clash · 1 h','Camp Clash · 1 ora','Camp Clash · 1 Std.','Camp Clash · 1 godz.'),detail:'clash'},
+      {day:'sat',title:L('KE','KE','KE','KE','KE'),sub:L('Kill Event','Kill Event','Kill Event','Kill Event','Kill Event')}
     ]},
-    {n:4,start:'2026-10-13',end:'2026-10-19',chips:['Territory pressure rises'],events:[
-      {day:'mon',title:'Merchant Battle Lv. 1–2',sub:'Merchant Guild contest',detail:'merchant'},
-      {day:'tue',title:'New Passes Unlock',sub:'New routes open'},
-      {day:'tue',title:'Territory Invasion',sub:'Camp Clash · 1 hour',detail:'clash'},
-      {day:'thu',title:'Territory Invasion',sub:'Camp Clash · 1 hour',detail:'clash'},
-      {day:'sat',title:'KE',sub:'Kill Event'}
+    {n:4,start:'2026-10-13',end:'2026-10-19',chips:[L('Territory pressure rises','La pression territoriale monte','Cresce la pressione territoriale','Territorialer Druck steigt','Rośnie presja terytorialna')],events:[
+      {day:'mon',title:L('Merchant Battle Lv. 1–2','Merchant Battle niv. 1–2','Merchant Battle Lv. 1–2','Merchant Battle Lv. 1–2','Merchant Battle poz. 1–2'),sub:L('Merchant Guild contest','Compétition Merchant Guild','Competizione Merchant Guild','Merchant-Guild-Wettkampf','Rywalizacja Merchant Guild'),detail:'merchant'},
+      {day:'tue',title:L('New Passes Unlock','Nouveaux Passes débloqués','Nuovi Passes sbloccati','Neue Passes freigeschaltet','Odblokowanie nowych Passes'),sub:L('New routes open','De nouvelles routes s’ouvrent','Si aprono nuove rotte','Neue Routen öffnen sich','Otwierają się nowe trasy')},
+      {day:'tue',title:L('Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion'),sub:L('Camp Clash · 1 hour','Camp Clash · 1 h','Camp Clash · 1 ora','Camp Clash · 1 Std.','Camp Clash · 1 godz.'),detail:'clash'},
+      {day:'thu',title:L('Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion'),sub:L('Camp Clash · 1 hour','Camp Clash · 1 h','Camp Clash · 1 ora','Camp Clash · 1 Std.','Camp Clash · 1 godz.'),detail:'clash'},
+      {day:'sat',title:L('KE','KE','KE','KE','KE'),sub:L('Kill Event','Kill Event','Kill Event','Kill Event','Kill Event')}
     ]},
-    {n:5,start:'2026-10-20',end:'2026-10-26',chips:['Merchant Battle Lv. 1–2–3'],events:[
-      {day:'mon',title:'Merchant Battle Lv. 1–2–3',sub:'Expanded Merchant Guild contest',detail:'merchant'},
-      {day:'tue',title:'New Passes Unlock',sub:'New routes open'},
-      {day:'tue',title:'Territory Invasion',sub:'Camp Clash · 1 hour',detail:'clash'},
-      {day:'thu',title:'Territory Invasion',sub:'Camp Clash · 1 hour',detail:'clash'},
-      {day:'sat',title:'KE',sub:'Kill Event'}
+    {n:5,start:'2026-10-20',end:'2026-10-26',chips:[L('Merchant Battle Lv. 1–2–3','Merchant Battle niv. 1–2–3','Merchant Battle Lv. 1–2–3','Merchant Battle Lv. 1–2–3','Merchant Battle poz. 1–2–3')],events:[
+      {day:'mon',title:L('Merchant Battle Lv. 1–2–3','Merchant Battle niv. 1–2–3','Merchant Battle Lv. 1–2–3','Merchant Battle Lv. 1–2–3','Merchant Battle poz. 1–2–3'),sub:L('Expanded Merchant Guild contest','Compétition Merchant Guild étendue','Competizione Merchant Guild estesa','Erweiterter Merchant-Guild-Wettkampf','Rozszerzona rywalizacja Merchant Guild'),detail:'merchant'},
+      {day:'tue',title:L('New Passes Unlock','Nouveaux Passes débloqués','Nuovi Passes sbloccati','Neue Passes freigeschaltet','Odblokowanie nowych Passes'),sub:L('New routes open','De nouvelles routes s’ouvrent','Si aprono nuove rotte','Neue Routen öffnen sich','Otwierają się nowe trasy')},
+      {day:'tue',title:L('Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion'),sub:L('Camp Clash · 1 hour','Camp Clash · 1 h','Camp Clash · 1 ora','Camp Clash · 1 Std.','Camp Clash · 1 godz.'),detail:'clash'},
+      {day:'thu',title:L('Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion'),sub:L('Camp Clash · 1 hour','Camp Clash · 1 h','Camp Clash · 1 ora','Camp Clash · 1 Std.','Camp Clash · 1 godz.'),detail:'clash'},
+      {day:'sat',title:L('KE','KE','KE','KE','KE'),sub:L('Kill Event','Kill Event','Kill Event','Kill Event','Kill Event')}
     ]},
-    {n:6,start:'2026-10-27',end:'2026-11-02',chips:['Final phase'],events:[
-      {day:'mon',title:'Merchant Battle Lv. 1–2–3',sub:'Merchant Guild contest',detail:'merchant'},
-      {day:'tue',title:'Territory Invasion',sub:'Camp Clash · 1 hour',detail:'clash'},
-      {day:'thu',title:'Judgment Altar Unlock',sub:'Late-season unlock'},
-      {day:'thu',title:'Territory Invasion',sub:'Camp Clash · 1 hour',detail:'clash'},
-      {day:'sat',title:'Ancient Temple Lv. 3 Battle + KE',sub:'Final Temple phase',detail:'temples'}
+    {n:6,start:'2026-10-27',end:'2026-11-02',chips:[L('Final phase','Phase finale','Fase finale','Finalphase','Faza finałowa')],events:[
+      {day:'mon',title:L('Merchant Battle Lv. 1–2–3','Merchant Battle niv. 1–2–3','Merchant Battle Lv. 1–2–3','Merchant Battle Lv. 1–2–3','Merchant Battle poz. 1–2–3'),sub:L('Merchant Guild contest','Compétition Merchant Guild','Competizione Merchant Guild','Merchant-Guild-Wettkampf','Rywalizacja Merchant Guild'),detail:'merchant'},
+      {day:'tue',title:L('Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion'),sub:L('Camp Clash · 1 hour','Camp Clash · 1 h','Camp Clash · 1 ora','Camp Clash · 1 Std.','Camp Clash · 1 godz.'),detail:'clash'},
+      {day:'thu',title:L('Judgment Altar Unlock','Déblocage du Judgment Altar','Sblocco Judgment Altar','Judgment Altar freigeschaltet','Odblokowanie Judgment Altar'),sub:L('Late-season unlock','Déblocage de fin de saison','Sblocco di fine stagione','Späte Saisonfreischaltung','Odblokowanie pod koniec sezonu')},
+      {day:'thu',title:L('Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion','Territory Invasion'),sub:L('Camp Clash · 1 hour','Camp Clash · 1 h','Camp Clash · 1 ora','Camp Clash · 1 Std.','Camp Clash · 1 godz.'),detail:'clash'},
+      {day:'sat',title:L('Ancient Temple Lv. 3 Battle + KE','Bataille Ancient Temple niv. 3 + KE','Battaglia Ancient Temple Lv. 3 + KE','Ancient-Temple-Lv.-3-Kampf + KE','Walka Ancient Temple poz. 3 + KE'),sub:L('Final Temple phase','Phase finale des Temples','Fase finale dei Temple','Letzte Temple-Phase','Finałowa faza Temple'),detail:'temples'}
     ]}
   ];
 
@@ -113,7 +118,8 @@
       const d=details[s.id];
       const card=document.createElement('button');
       card.type='button'; card.className='system-card';
-      card.innerHTML='<span class="system-icon">'+s.icon+'</span><small>'+pick(s.tag)+'</small><strong>'+pick(d.title)+'</strong><p>'+pick(s.sub)+'</p><span class="system-arrow">→</span>';
+      card.dataset.art = String(artIndex[s.id] ?? 0);
+      card.innerHTML='<span class="system-art art-'+card.dataset.art+'"></span><span class="system-icon">'+s.icon+'</span><span class="system-copy"><small>'+pick(s.tag)+'</small><strong>'+pick(d.title)+'</strong><p>'+pick(s.sub)+'</p></span><span class="system-arrow">→</span>';
       card.addEventListener('click',()=>openDetail(s.id));
       grid.appendChild(card);
     });
@@ -141,7 +147,10 @@
         const btn=document.createElement('button');
         btn.type='button'; btn.className='event-card'+(e.detail?'':' no-detail');
         const day=dayNames[lang][e.day] || e.day;
-        btn.innerHTML='<span class="event-day"><b>'+day+'</b><span>'+(e.detail?tr().guide:tr().calendar)+'</span></span><span class="event-copy"><strong>'+e.title+'</strong><small>'+e.sub+'</small>'+(e.detail?'<em class="event-badge">'+tr().guide+'</em>':'')+'</span><span class="event-arrow">'+(e.detail?'→':'·')+'</span>';
+        const title = pick(e.title), sub = pick(e.sub);
+        const art = e.detail && artIndex[e.detail] !== undefined ? artIndex[e.detail] : null;
+        if (art !== null) btn.dataset.art = String(art);
+        btn.innerHTML='<span class="event-day"><b>'+day+'</b><span>'+(e.detail?tr().guide:tr().calendar)+'</span></span><span class="event-copy"><strong>'+title+'</strong><small>'+sub+'</small>'+(e.detail?'<em class="event-badge">'+tr().guide+'</em>':'')+'</span><span class="event-arrow">'+(e.detail?'→':'·')+'</span>';
         if(e.detail) btn.addEventListener('click',()=>openDetail(e.detail));
         list.appendChild(btn);
       });
@@ -149,7 +158,7 @@
 
       if(w.chips.length){
         const foot=document.createElement('div'); foot.className='week-footer';
-        w.chips.forEach(c=>{const x=document.createElement('span');x.className='week-chip';x.textContent=c;foot.appendChild(x);});
+        w.chips.forEach(chip=>{const x=document.createElement('span');x.className='week-chip';x.textContent=pick(chip);foot.appendChild(x);});
         card.appendChild(foot);
       }
       row.append(node,card); root.appendChild(row);
@@ -158,6 +167,9 @@
 
   function openDetail(id){
     const d=details[id]; if(!d)return;
+    const art = artIndex[id] !== undefined ? artIndex[id] : 0;
+    const detailArt = $('#detailArt');
+    if(detailArt) detailArt.className='detail-art art-'+art;
     $('#detailKicker').textContent=pick(d.kicker);
     $('#detailTitle').textContent=pick(d.title);
     $('#detailLead').textContent=pick(d.lead);
@@ -192,7 +204,7 @@
   function buildSearch(){
     searchIndex=[];
     systems.forEach(s=>{const d=details[s.id];searchIndex.push({kind:'SYSTEM',title:pick(d.title),sub:pick(s.sub),detail:s.id,text:(pick(d.title)+' '+pick(d.lead)+' '+pick(s.sub)).toLowerCase()});});
-    weeks.forEach(w=>w.events.forEach(e=>searchIndex.push({kind:'W'+w.n,title:e.title,sub:e.sub,detail:e.detail||null,week:w.n,text:(e.title+' '+e.sub+' '+dayNames[lang][e.day]).toLowerCase()})));
+    weeks.forEach(w=>w.events.forEach(e=>{const title=pick(e.title),sub=pick(e.sub);searchIndex.push({kind:'W'+w.n,title,sub,detail:e.detail||null,week:w.n,text:(title+' '+sub+' '+dayNames[lang][e.day]).toLowerCase()});}));
   }
   function renderSearch(q){
     const root=$('#searchResults');root.replaceChildren();
@@ -216,6 +228,7 @@
 
   function applyLanguage(){
     document.documentElement.lang=lang;
+    document.title='434 — '+(lang==='fr'?'Road Map Ragnarok':lang==='it'?'Road Map Ragnarok':lang==='de'?'Ragnarok Road Map':lang==='pl'?'Ragnarok Road Map':'Ragnarok Road Map');
     $('#languageSelect').value=lang;
     $$('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(tr()[key])el.textContent=tr()[key];});
     $('#guideSearch').placeholder=tr().searchPlaceholder;
@@ -227,7 +240,10 @@
   navToggle.addEventListener('click',()=>{const open=navToggle.getAttribute('aria-expanded')==='true';navToggle.setAttribute('aria-expanded',String(!open));mobileNav.hidden=open;});
   $$('#mobileNav a').forEach(a=>a.addEventListener('click',()=>{navToggle.setAttribute('aria-expanded','false');mobileNav.hidden=true;}));
 
-  $('#languageSelect').addEventListener('change',e=>{lang=e.target.value;applyLanguage();});
+  const languageSelect=$('#languageSelect');
+  const onLanguageChange=e=>{const next=e.target.value;if(supported.includes(next)){lang=next;applyLanguage();}};
+  languageSelect.addEventListener('change',onLanguageChange);
+  languageSelect.addEventListener('input',onLanguageChange);
   $('#searchOpen').addEventListener('click',openSearch);
   $$('[data-close-search]').forEach(x=>x.addEventListener('click',closeSearch));
   $$('[data-close-detail]').forEach(x=>x.addEventListener('click',closeDetail));
