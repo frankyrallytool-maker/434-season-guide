@@ -3,35 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#060914" />
-  <meta name="description" content="434 interactive Dark War Survival season guide." />
-  <title>434 — Season Guide</title>
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <meta name="theme-color" content="#130b06" />
+  <meta name="description" content="Server 434 Ragnarok Season 6 interactive road map." />
+  <title>434 — Ragnarok Road Map</title>
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
-  <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
-  <div class="bg-orb bg-orb-b" aria-hidden="true"></div>
+  <div class="page-glow page-glow-left" aria-hidden="true"></div>
+  <div class="page-glow page-glow-right" aria-hidden="true"></div>
 
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="434 Season Guide home">
-      <span class="brand-mark">434</span>
+    <a class="brand" href="#top" aria-label="434 Ragnarok Road Map">
+      <span class="brand-emblem">☥</span>
       <span class="brand-copy">
         <strong>434</strong>
-        <small>SEASON GUIDE</small>
+        <small>RAGNAROK · SEASON 6</small>
       </span>
     </a>
 
-    <div class="topbar-right">
+    <div class="topbar-tools">
       <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#start">Start here</a>
-      <a href="#items">Items</a>
-      <a href="#ruins">Ruins</a>
-      <a href="#daily">Daily</a>
-        <a href="#tips">Tips</a>
+        <a href="#roadmap" data-i18n="navRoadmap">Road Map</a>
+        <a href="#systems" data-i18n="navSystems">Season Systems</a>
       </nav>
 
+      <button class="search-open" id="searchOpen" type="button" aria-label="Search">
+        <span aria-hidden="true">⌕</span>
+        <span class="search-open-label" data-i18n="search">Search</span>
+      </button>
+
       <label class="language-picker" for="languageSelect">
-        <span class="language-icon" aria-hidden="true">◎</span>
+        <span aria-hidden="true">◎</span>
         <select id="languageSelect" aria-label="Language">
           <option value="en">EN</option>
           <option value="fr">FR</option>
@@ -49,272 +51,126 @@
   </header>
 
   <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" hidden>
-    <a href="#start">Start here</a>
-    <a href="#items">Items</a>
-    <a href="#ruins">Ruins</a>
-    <a href="#daily">Daily</a>
-    <a href="#tips">Tips</a>
+    <a href="#roadmap" data-i18n="navRoadmap">Road Map</a>
+    <a href="#systems" data-i18n="navSystems">Season Systems</a>
   </nav>
 
   <main id="top">
-    <section class="hero" aria-labelledby="heroTitle">
+    <section class="hero">
+      <div class="hero-sun" aria-hidden="true"></div>
+      <div class="hero-pyramids" aria-hidden="true">
+        <span class="pyramid pyramid-a"></span>
+        <span class="pyramid pyramid-b"></span>
+        <span class="pyramid pyramid-c"></span>
+      </div>
+
       <div class="hero-copy">
-        <p class="eyebrow">DARK WAR SURVIVAL · INTERACTIVE GUIDE</p>
-        <h1 id="heroTitle">Enter the season.<br><span>Know what to do.</span></h1>
-        <p class="hero-text">A fast, mobile-friendly guide for Server 434 players. Follow the essentials first, then dive deeper when you need details.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#start">Start the guide</a>
-          <button class="btn btn-ghost" id="resetProgress" type="button">Reset progress</button>
-        </div>
-      </div>
+        <p class="season-badge"><span>☥</span> <b>RAGNAROK</b> · <span data-i18n="season6">SEASON 6</span></p>
+        <h1>
+          <span class="hero-kicker" data-i18n="originLands">ORIGIN LANDS II</span>
+          <span class="hero-title" data-i18n="roadmapTitle">ROAD MAP</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="roadmapSubtitle">Six weeks. One path. Everything important at a glance.</p>
 
-      <div class="hero-panel" aria-label="Guide progress">
-        <div class="rune-ring" aria-hidden="true">
-          <div class="rune-ring-inner">VI</div>
-        </div>
-        <div class="progress-copy">
-          <span>YOUR PROGRESS</span>
-          <strong id="progressValue">0 / 5</strong>
-        </div>
-        <div class="progress-track" aria-hidden="true">
-          <div class="progress-fill" id="progressFill"></div>
-        </div>
-        <p id="progressHint">Complete the five first-season actions.</p>
-      </div>
-    </section>
-
-    <section class="guide-search" aria-label="Search the guide">
-      <div class="search-copy">
-        <span class="eyebrow">FIND IT FAST</span>
-        <strong>Search the guide</strong>
-      </div>
-      <div class="search-box-wrap">
-        <label class="search-box" for="guideSearch">
-          <span class="search-symbol" aria-hidden="true">⌕</span>
-          <input id="guideSearch" type="search" autocomplete="off" placeholder="Search an item, task, building, buff..." />
-          <button id="clearSearch" class="clear-search" type="button" aria-label="Clear search" hidden>×</button>
-        </label>
-        <div id="searchResults" class="search-results" aria-live="polite" hidden></div>
-      </div>
-    </section>
-
-    <section class="quick-strip" aria-label="Quick guide sections">
-      <a href="#start"><span>01</span><strong>First moves</strong><small>Get started correctly</small></a>
-      <a href="#items"><span>02</span><strong>Item finder</strong><small>What? Where? When?</small></a>
-      <a href="#ruins"><span>03</span><strong>Divine Ruins</strong><small>Tasks & buffs</small></a>
-      <a href="#daily"><span>04</span><strong>Daily routine</strong><small>What not to miss</small></a>
-      <a href="#tips"><span>05</span><strong>Quick tips</strong><small>Small things that matter</small></a>
-    </section>
-
-    <section id="start" class="section section-start">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">START HERE</p>
-          <h2>Your first 5 actions</h2>
-        </div>
-        <p>Tap a card for details. Check it when done — your progress is saved on this device.</p>
-      </div>
-
-      <div class="step-list" id="stepList">
-        <article class="step-card" data-step="1">
-          <button class="step-toggle" type="button" aria-expanded="true">
-            <span class="step-number">01</span>
-            <span class="step-title-wrap">
-              <span class="step-kicker">SEASON MAP</span>
-              <strong>Enter the new map</strong>
-            </span>
-            <span class="step-state" aria-hidden="true">+</span>
-          </button>
-          <div class="step-body">
-            <p>Open the <strong>Season</strong> icon, tap <strong>ENTER</strong>, then teleport into your alliance hive.</p>
-            <div class="micro-flow" aria-label="Step one sequence">
-              <span>Season</span><i>→</i><span>Enter</span><i>→</i><span>Alliance hive</span>
+        <div class="hero-status">
+          <div class="season-progress">
+            <div class="season-progress-top">
+              <span id="seasonState">Season starts soon</span>
+              <strong id="seasonProgressLabel">0%</strong>
             </div>
-            <label class="done-check"><input type="checkbox" data-progress="1" /> <span>Done</span></label>
+            <div class="season-progress-track">
+              <div id="seasonProgressFill" class="season-progress-fill"></div>
+            </div>
           </div>
-        </article>
+          <a class="hero-cta" href="#roadmap">
+            <span data-i18n="viewRoadmap">View the road map</span>
+            <b aria-hidden="true">↓</b>
+          </a>
+        </div>
+      </div>
 
-        <article class="step-card" data-step="2">
-          <button class="step-toggle" type="button" aria-expanded="false">
-            <span class="step-number">02</span>
-            <span class="step-title-wrap">
-              <span class="step-kicker">FARM FIRST</span>
-              <strong>Hunt Boomers & Zombies</strong>
-            </span>
-            <span class="step-state" aria-hidden="true">+</span>
-          </button>
-          <div class="step-body" hidden>
-            <p>Kill <strong>Boomers</strong> and <strong>Zombies</strong> to collect the season currency and resources you need for the opening progression.</p>
-            <label class="done-check"><input type="checkbox" data-progress="2" /> <span>Done</span></label>
-          </div>
-        </article>
-
-        <article class="step-card" data-step="3">
-          <button class="step-toggle" type="button" aria-expanded="false">
-            <span class="step-number">03</span>
-            <span class="step-title-wrap">
-              <span class="step-kicker">SEASON BUILDINGS</span>
-              <strong>Build the Altar & Obelisk</strong>
-            </span>
-            <span class="step-state" aria-hidden="true">+</span>
-          </button>
-          <div class="step-body" hidden>
-            <p>Go to the bottom of the season tower and start building your <strong>Altar</strong> and <strong>Obelisk</strong>.</p>
-            <div class="tip-box"><span>TIP</span> Do this early so your seasonal progression is not delayed.</div>
-            <label class="done-check"><input type="checkbox" data-progress="3" /> <span>Done</span></label>
-          </div>
-        </article>
-
-        <article class="step-card" data-step="4">
-          <button class="step-toggle" type="button" aria-expanded="false">
-            <span class="step-number">04</span>
-            <span class="step-title-wrap">
-              <span class="step-kicker">BONUS RESET</span>
-              <strong>Use the Shadow Call reset</strong>
-            </span>
-            <span class="step-state" aria-hidden="true">+</span>
-          </button>
-          <div class="step-body" hidden>
-            <p><strong>Shadow Call has been reset.</strong> Take advantage of the reset and complete it again.</p>
-            <label class="done-check"><input type="checkbox" data-progress="4" /> <span>Done</span></label>
-          </div>
-        </article>
-
-        <article class="step-card" data-step="5">
-          <button class="step-toggle" type="button" aria-expanded="false">
-            <span class="step-number">05</span>
-            <span class="step-title-wrap">
-              <span class="step-kicker">DIVINE RUINS</span>
-              <strong>Start your Ruins Tasks</strong>
-            </span>
-            <span class="step-state" aria-hidden="true">+</span>
-          </button>
-          <div class="step-body" hidden>
-            <p>Start your Ruins Tasks and read every <strong>!</strong> carefully before choosing. Different tasks can offer different buffs for different troop types.</p>
-            <div class="warning-box"><strong>Choose wisely.</strong> Do not select a task only because it looks stronger — match the buff to the troops you actually use.</div>
-            <label class="done-check"><input type="checkbox" data-progress="5" /> <span>Done</span></label>
-          </div>
-        </article>
+      <div class="hero-seal" aria-hidden="true">
+        <span class="seal-ring"></span>
+        <span class="seal-symbol">☥</span>
+        <span class="seal-caption">434</span>
       </div>
     </section>
 
-    <section id="items" class="section item-section">
+    <section id="systems" class="systems-section section-anchor">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="eyebrow" data-i18n="seasonSystems">SEASON SYSTEMS</p>
+          <h2 data-i18n="alwaysWorthKnowing">Always worth knowing</h2>
+        </div>
+        <p data-i18n="systemsIntro">These mechanics run alongside the weekly calendar. Tap a card for the essentials.</p>
+      </div>
+
+      <div id="systemGrid" class="system-grid"></div>
+    </section>
+
+    <section id="roadmap" class="roadmap-section section-anchor">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">ITEM · WHAT IS THIS?</p>
-          <h2>Know what to keep — and when to use it</h2>
+          <p class="eyebrow" data-i18n="sixWeekJourney">THE 6-WEEK JOURNEY</p>
+          <h2 data-i18n="seasonRoadmap">Season Road Map</h2>
         </div>
-        <p>Use this area when you find an unfamiliar season item. Each card answers the three questions that matter immediately.</p>
-      </div>
-
-      <div class="item-explainer" aria-label="Item card fields">
-        <div>
-          <span class="item-field-number">01</span>
-          <strong>WHAT?</strong>
-          <p>What the item is, what it does and why it matters.</p>
-        </div>
-        <div>
-          <span class="item-field-number">02</span>
-          <strong>WHERE?</strong>
-          <p>The exact menu, building, event or feature where you use it.</p>
-        </div>
-        <div>
-          <span class="item-field-number">03</span>
-          <strong>FROM WHEN?</strong>
-          <p>Available now, Week 2, later in the season, or only during a specific event.</p>
+        <div class="roadmap-heading-tools">
+          <span class="legend-chip"><i class="legend-dot detail-dot"></i><span data-i18n="guideAvailable">Guide available</span></span>
+          <span class="legend-chip"><i class="legend-dot schedule-dot"></i><span data-i18n="calendarOnly">Calendar info</span></span>
         </div>
       </div>
 
-      <div class="item-toolbar">
-        <div class="item-filters" role="group" aria-label="Filter items by availability">
-          <button class="item-filter is-active" type="button" data-item-filter="all">All</button>
-          <button class="item-filter" type="button" data-item-filter="now">Now</button>
-          <button class="item-filter" type="button" data-item-filter="week-2">Week 2</button>
-          <button class="item-filter" type="button" data-item-filter="later">Later</button>
-        </div>
-        <span id="itemCount" class="item-count">0 items documented</span>
-      </div>
-
-      <div id="itemGrid" class="item-grid">
-        <div id="itemEmpty" class="item-empty">
-          <span class="item-empty-mark">?</span>
-          <div>
-            <strong>Item database ready.</strong>
-            <p>Send me an item name or screenshot and it will be added here with <b>WHAT?</b>, <b>WHERE?</b> and <b>FROM WHEN?</b>.</p>
-          </div>
-        </div>
+      <div class="roadmap-shell">
+        <div class="roadmap-line" aria-hidden="true"></div>
+        <div id="roadmapWeeks" class="roadmap-weeks"></div>
       </div>
     </section>
 
-    <section id="ruins" class="section split-section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">DIVINE RUINS</p>
-          <h2>Read before you choose</h2>
-        </div>
-        <p>This area will grow with the detailed Ruins tables, refresh costs and buff choices from our season notes.</p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature-card feature-card-wide">
-          <span class="feature-index">RULE #1</span>
-          <h3>The “!” matters</h3>
-          <p>The warning/details icon is there for a reason. Open it before locking a task so you know which troop type or bonus the task actually supports.</p>
-          <div class="troop-row" aria-label="Troop buff reminder">
-            <span>Troop A</span><span>Troop B</span><span>Troop C</span>
-          </div>
-        </article>
-        <article class="feature-card">
-          <span class="feature-index">NEXT</span>
-          <h3>Refresh strategy</h3>
-          <p>Refresh costs and daily limits will be added here from the verified season data.</p>
-          <span class="status-pill">DATA TO INTEGRATE</span>
-        </article>
-        <article class="feature-card">
-          <span class="feature-index">NEXT</span>
-          <h3>Best task picks</h3>
-          <p>A simple selector will help players match Ruins tasks to their troop focus.</p>
-          <span class="status-pill">COMING NEXT</span>
-        </article>
-      </div>
-    </section>
-
-    <section id="daily" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">DAILY ROUTINE</p>
-          <h2>Don't leave free progress behind</h2>
-        </div>
-        <p>The daily checklist will expand as we validate each season mechanic.</p>
-      </div>
-
-      <div class="daily-board">
-        <div class="daily-item"><span class="daily-dot"></span><div><strong>Farm season enemies</strong><small>Boomers & Zombies</small></div></div>
-        <div class="daily-item"><span class="daily-dot"></span><div><strong>Check Ruins Tasks</strong><small>Read the buff details before choosing</small></div></div>
-        <div class="daily-item"><span class="daily-dot"></span><div><strong>Review seasonal buildings</strong><small>Keep Altar & Obelisk progression moving</small></div></div>
-      </div>
-    </section>
-
-    <section id="tips" class="section tips-section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">434 NOTES</p>
-          <h2>Fast reminders</h2>
-        </div>
-      </div>
-      <div class="tips-grid">
-        <article><span>01</span><p>Enter the season map before you start spending time on the old map.</p></article>
-        <article><span>02</span><p>Do not ignore resets such as Shadow Call — they are extra progression opportunities.</p></article>
-        <article><span>03</span><p>In Divine Ruins, the best task is the one that fits your troop setup, not just the first high-looking bonus.</p></article>
-      </div>
+    <section class="roadmap-note">
+      <span>!</span>
+      <p data-i18n="calendarDisclaimer">Dates and content may change. If anything differs in game, follow the official Dark War Survival announcements.</p>
     </section>
   </main>
 
   <footer class="footer">
-    <div><strong>434</strong><span>Interactive Season Guide</span></div>
-    <p>Made for the alliance · Mobile + desktop</p>
+    <div>
+      <strong>434</strong>
+      <span data-i18n="footerTitle">Ragnarok Season 6 · Interactive Road Map</span>
+    </div>
+    <p data-i18n="footerSub">Built for quick use on mobile and desktop.</p>
   </footer>
 
-  <script src="app.js?v=3"></script>
+  <div id="searchPanel" class="search-panel" hidden>
+    <button class="search-backdrop" type="button" data-close-search aria-label="Close search"></button>
+    <div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="searchDialogTitle">
+      <div class="search-dialog-head">
+        <div>
+          <span class="eyebrow" data-i18n="findFast">FIND IT FAST</span>
+          <strong id="searchDialogTitle" data-i18n="searchGuide">Search the season</strong>
+        </div>
+        <button class="icon-button" type="button" data-close-search aria-label="Close">×</button>
+      </div>
+      <label class="search-field" for="guideSearch">
+        <span aria-hidden="true">⌕</span>
+        <input id="guideSearch" type="search" autocomplete="off" placeholder="Search Outpost, Temple, Merchant..." />
+      </label>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <div id="detailModal" class="detail-modal" hidden>
+    <button class="detail-backdrop" type="button" data-close-detail aria-label="Close details"></button>
+    <article class="detail-sheet" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <button class="detail-close" type="button" data-close-detail aria-label="Close">×</button>
+      <div class="detail-ornament" aria-hidden="true">☥</div>
+      <p id="detailKicker" class="detail-kicker"></p>
+      <h2 id="detailTitle"></h2>
+      <p id="detailLead" class="detail-lead"></p>
+      <div id="detailFacts" class="detail-facts"></div>
+      <div id="detailTips" class="detail-tips"></div>
+    </article>
+  </div>
+
+  <script src="app.js?v=5"></script>
 </body>
 </html>
