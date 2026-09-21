@@ -45,15 +45,15 @@
   const weeks = [
     {n:1,start:'2026-09-22',end:'2026-09-28',chips:['Season Kickoff'],events:[
       {day:'mon',title:'Outpost Lv. 1–2',sub:'Territory expansion begins',detail:'outpost'},
-      {day:'mon',title:'Fortress Lv. 3',sub:'Fortress progression'},
-      {day:'wed',title:'Fortress Lv. 4 Unlock',sub:'New Fortress level'},
+      {day:'mon',title:'Fortress Lv. 3',sub:'Fortress progression',detail:'fortress'},
+      {day:'wed',title:'Fortress Lv. 4 Unlock',sub:'New Fortress level',detail:'fortress'},
       {day:'sat',title:'Temple 1 Battle + KE',sub:'Divine Temple battle',detail:'temples'},
       {day:'ongoing',title:'Season Kickoff',sub:'6-day ranking event',detail:'kickoff'}
     ]},
     {n:2,start:'2026-09-29',end:'2026-10-05',chips:['Merchant Guild opens'],events:[
       {day:'mon',title:'Passes Unlock',sub:'New routes open'},
       {day:'mon',title:'Origin Merchant Guild',sub:'First opening · 12:00 server time',detail:'merchant'},
-      {day:'wed',title:'Fortress Lv. 5 Unlock',sub:'New Fortress level'},
+      {day:'wed',title:'Fortress Lv. 5 Unlock',sub:'New Fortress level',detail:'fortress'},
       {day:'sat',title:'Temple 2 Battle + KE',sub:'Divine Temple battle',detail:'temples'}
     ]},
     {n:3,start:'2026-10-06',end:'2026-10-12',chips:['Camp Clash starts'],events:[
